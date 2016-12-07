@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
+
 import click
+from flask.cli import FlaskGroup
+
+from .cosmicpi_web import app
 
 
-@click.command()
-def main(args=None):
-    """Console script for cosmicpi_web"""
-    click.echo("Replace this message by putting your code into "
-               "cosmicpi_web.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
-
-
-if __name__ == "__main__":
-    main()
+@click.group(cls=FlaskGroup, create_app=lambda info: app)
+def main():
+    """This is the main entry point for the web application."""

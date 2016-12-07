@@ -11,7 +11,8 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'Click>=6.0',
-    'pika>=0.10.0'
+    'flask>=0.11',
+    'pika>=0.10.0',
 ]
 
 test_requirements = [
