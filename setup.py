@@ -20,7 +20,7 @@ test_requirements = [
 
 setup(
     name='cosmicpi_web',
-    version='0.2.0',
+    version='0.2.1',
     description="Web frontend for Cosmic Pi",
     long_description=readme + '\n\n' + history,
     author="CosmicPi team",
