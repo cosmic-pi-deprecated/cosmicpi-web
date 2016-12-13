@@ -13,7 +13,6 @@ import pytest
 from contextlib import contextmanager
 from click.testing import CliRunner
 
-from cosmicpi_web import cosmicpi_web
 from cosmicpi_web import cli
 
 
