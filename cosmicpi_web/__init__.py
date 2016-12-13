@@ -6,5 +6,5 @@ from .cosmicpi_web import app
 
 __author__ = """CosmicPi team"""
 __email__ = 'info@cosmicpi.org'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 __all__ = ('app', )
