@@ -1,19 +1,16 @@
-
+include *.py
+include *.txt
+include .editorconfig
+include .github/ISSUE_TEMPLATE.md
 include AUTHORS.rst
-
 include CONTRIBUTING.rst
 include HISTORY.rst
 include LICENSE
-include README.rst
-
-include *.py
-include *.txt
 include Makefile
+include README.rst
 include tox.ini
-recursive-include cosmicpi_web *.html
-
-recursive-include tests *
-recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
-
+recursive-exclude * __pycache__
+recursive-include cosmicpi_web *.html
 recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
+recursive-include tests *
