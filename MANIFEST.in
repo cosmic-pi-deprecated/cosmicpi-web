@@ -6,7 +6,12 @@ include HISTORY.rst
 include LICENSE
 include README.rst
 
-recursive-include cosmicpi_web/static/*.html
+include *.py
+include *.txt
+include Makefile
+include tox.ini
+recursive-include cosmicpi_web *.html
+
 recursive-include tests *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
