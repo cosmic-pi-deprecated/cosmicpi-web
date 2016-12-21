@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
+import os
 
 from flask import Flask
-app = Flask(__name__)
+
+from .handlers import socketio
 
 
-@app.route('/')
-def hello_world():
-    return app.send_static_file('index.html')
+def create_app(info):
+    app = Flask('cosmicpi_web')
+
+    @app.route('/')
+    def index():
+        return app.send_static_file('index.html')
+
+    socketio.init_app(app, message_queue=os.environ.get('BROKER_URL'))
+    return app

@@ -1,5 +1,77 @@
-<html>
-<body>
-<h1>LOL</h1>
+<!DOCTYPE html>
+<html ng-app="cosmicpi">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CosmicPi</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body ng-controller="HomeController as $ctrl">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                CosmicPi
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+LOL
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+
+<script type="text/javascript">
+  var app = angular.module('cosmicpi', []);
+
+  app.controller('HomeController', function ($scope) {
+    var self = this;
+
+    self.namespace = '/events';
+    self.current_detector = null;
+
+    var socket = io.connect('http://' + document.domain + ':' + location.port + self.namespace);
+
+    socket.on('connect', function () {
+      console.log('connected');
+      socket.emit('subscribe');
+    });
+
+    socket.on('event', function (msg) {
+      $scope.$apply(function () {
+        console.log('received: ' + msg);
+      });
+    });
+
+  });
+</script>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
