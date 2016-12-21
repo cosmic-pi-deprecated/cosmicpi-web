@@ -35,7 +35,7 @@ setup(
                  'cosmicpi_web'},
     entry_points={
         'console_scripts': [
-            'cosmicpi_web=cosmicpi_web.cli:main'
+            'cosmicpi_web=cosmicpi_web:main'
         ]
     },
     include_package_data=True,
