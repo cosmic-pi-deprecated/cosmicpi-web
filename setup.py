@@ -11,7 +11,10 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'Click>=6.0',
-    'pika>=0.10.0'
+    'flask>=0.11',
+    'flask-socketio>=2.8.2',
+    'kombu>=4.0.2',
+    'pika>=0.10.0',
 ]
 
 test_requirements = [
@@ -19,7 +22,7 @@ test_requirements = [
 
 setup(
     name='cosmicpi_web',
-    version='0.1.0',
+    version='0.2.1',
     description="Web frontend for Cosmic Pi",
     long_description=readme + '\n\n' + history,
     author="CosmicPi team",
@@ -32,7 +35,7 @@ setup(
                  'cosmicpi_web'},
     entry_points={
         'console_scripts': [
-            'cosmicpi_web=cosmicpi_web.cli:main'
+            'cosmicpi_web=cosmicpi_web:main'
         ]
     },
     include_package_data=True,

@@ -3,8 +3,10 @@ python: 3.5
 env:
 - TOXENV=py35
 - TOXENV=py27
-install: pip install -U tox
-script: tox -e ${TOXENV}
+install: pip install -U tox check-manifest
+script:
+- check-manifest
+- tox -e ${TOXENV}
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
